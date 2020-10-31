@@ -1,5 +1,8 @@
 <template>
-  <UserLoginPage/>
+  <div id="app" class="main-container" :style="{ backgroundImage: 'url('+require('./assets/'+background)+')' }">
+    <UserLoginPage/>
+  </div>
+  
 </template>
 
 <script>
@@ -9,17 +12,33 @@ export default {
   name: 'App',
   components: {
     UserLoginPage
+  },
+  data(){
+    return{
+      background: 'background.png'
+    }
+    
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.main-container{
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
 }
 </style>
