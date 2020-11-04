@@ -1,11 +1,9 @@
 <template>
   <div class="btn-group">
-    <button class="btn btn-signup" @click="signup = false">Log In</button>
-    <button class="btn btn-login" @click="signup = true">Sign Up</button>
+    <button class="btn btn-login" @click="signup = false">Log&nbsp;In</button>
+    <button class="btn btn-signup" @click="signup = true">Sign&nbsp;Up</button>
   </div>
   <div class="login-form_container">
-    
-    
     <UserSignupForm v-if="signup == true"/>
     <UserLoginForm v-if="signup == false"/>
   </div>
@@ -40,28 +38,29 @@ export default {
   display: flex;
   justify-content: space-between;
   position: fixed;
-  top: 10px;
-  right: 20px;
   .btn{
-    height: 35px;
-    width: 70px;
-    border: 1px solid #ccc;
+    padding: 8px 16px;
+    display: block;
     border-radius: 5px;
     outline: none;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
     &.btn-login{
-      background: rgb(131, 131, 255);
-      border: 1px solid rgb(131, 131, 255);
-      color: white;
+      background:#002341;
+      border: 1px solid #008cd2;
+      color: #e0e5e8;
+      margin-right: 10px;
     }
     &.btn-signup{
-      background: rgb(255, 247, 131);
-      border: 1px solid rgb(255, 247, 131);
+      background:#008cd2;
+      border: 1px solid #008cd2;
+      color: #ffffff;
     }
   }
 }
 .login-form_container{
-  margin: 40px 0;
+  margin: 60px 0;
   box-sizing: border-box;
   border: 1px solid #E2E8F0;
   border-radius: 5px;
@@ -200,15 +199,30 @@ export default {
   .login-form_container{
     width: 446px;
   }
+  .btn-group{
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
-@media only screen and (max-width: 767px){
+@media only screen and (min-width: 321px) and (max-width: 767px){
   .login-form_container{
     width: 350px;
+  }
+  .btn-group{
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media only screen and (max-width: 320px){
   .login-form_container{
     width: 300px;
+  }
+  .btn-group{
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>
